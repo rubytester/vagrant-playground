@@ -134,5 +134,66 @@ The actual image vm built from this box is in `~/VirtualBox VMs` folder `vagrant
 
 `cat hello.txt` should produce 'hello empire' 
 
+ok we are ready for chef
+
+## CHEF
+
+https://learnchef.opscode.com/quickstart/workstation-setup/
+
+I am going to skip rbenv for now and on my machine just get basic chef running
+
+## sudo gem install chef
+
+and here are the dependencies.
+
+```
+$ sudo gem install chef
+Fetching: mixlib-config-1.1.2.gem (100%)
+Fetching: mixlib-cli-1.3.0.gem (100%)
+Fetching: mixlib-log-1.6.0.gem (100%)
+Fetching: mixlib-authentication-1.3.0.gem (100%)
+Fetching: yajl-ruby-1.1.0.gem (100%)
+Building native extensions.  This could take a while...
+Fetching: ipaddress-0.8.0.gem (100%)
+Fetching: ohai-6.18.0.gem (100%)
+Fetching: net-ssh-2.6.8.gem (100%)
+Fetching: net-ssh-gateway-1.2.0.gem (100%)
+Fetching: net-ssh-multi-1.1.gem (100%)
+Fetching: highline-1.6.19.gem (100%)
+Fetching: erubis-2.7.0.gem (100%)
+Fetching: chef-11.6.0.gem (100%)
+```
+
+gonna use chef_solo for provisioning (not chef server yet)
+
+
+the executable seems to be chef-solo but we're not going to use it. we'll use Vagrant file instead.
+```
+$ chef-solo -h
+Usage: /usr/local/bin/chef-solo (options)
+    -f, --[no-]fork                  Fork client
+        --[no-]color                 Use colored output, defaults to enabled
+    -c, --config CONFIG              The configuration file to use
+    -d, --daemonize                  Daemonize the process
+        --force-formatter            Use formatter output instead of logger output
+        --force-logger               Use logger output instead of formatter output
+    -F, --format FORMATTER           output format to use
+    -g, --group GROUP                Group to set privilege to
+    -i, --interval SECONDS           Run chef-client periodically, in seconds
+    -j JSON_ATTRIBS,                 Load attributes from a JSON file or URL
+        --json-attributes
+    -l, --log_level LEVEL            Set the log level (debug, info, warn, error, fatal)
+    -L, --logfile LOGLOCATION        Set the log file location, defaults to STDOUT
+    -N, --node-name NODE_NAME        The node name for this client
+    -o RunlistItem,RunlistItem...,   Replace current run list with specified items
+        --override-runlist
+    -r, --recipe-url RECIPE_URL      Pull down a remote gzipped tarball of recipes and untar it to the cookbook cache.
+    -s, --splay SECONDS              The splay time for running at intervals, in seconds
+    -u, --user USER                  User to set privilege to
+    -v, --version                    Show chef version
+    -W, --why-run                    Enable whyrun mode
+    -h, --help                       Show this message
+```
+
 
 
