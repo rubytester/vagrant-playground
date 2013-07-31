@@ -235,15 +235,23 @@ Let's test. `vagrant ssh` to the machine and run `git` command. yiipppi. we are 
 
 when I ran vagrant up I got this folder
 
+```
 [~/vagrant-playground/.vagrant (master)]
 $ lstree
    .
    |-machines
    |---default
    |-----virtualbox
+```
 
 with id file outputting the machine id. `0ef31af7-1786-4e87-bd27-ef15c0aeaee8` so I guess this is how vagrant keeps track of machine instance?
 I bet I want to add .vagrant folder to gitignore.
+
+
+## shared folder /vagrant on vm
+
+Vagrant automatically sets up shared folder on vm in `/vagrant` pointing to the root project dir on host. (dir where we started vagrant with Vagrantfile on host `~/vagrant-playground` in this case). nice. So this is how it has access to the cookbooks ?! hm. So host and vm has a shared folder so no need to copy stuff? need to figure this out.
+
 
 
 
