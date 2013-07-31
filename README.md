@@ -231,5 +231,19 @@ stdin: is not a tty
 
 Let's test. `vagrant ssh` to the machine and run `git` command. yiipppi. we are golden.
 
+## mysterious .vagrant folder
+
+when I ran vagrant up I got this folder
+
+[~/vagrant-playground/.vagrant (master)]
+$ lstree
+   .
+   |-machines
+   |---default
+   |-----virtualbox
+
+with id file outputting the machine id. `0ef31af7-1786-4e87-bd27-ef15c0aeaee8` so I guess this is how vagrant keeps track of machine instance?
+I bet I want to add .vagrant folder to gitignore.
+
 
 
