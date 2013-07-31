@@ -195,5 +195,41 @@ Usage: /usr/local/bin/chef-solo (options)
     -h, --help                       Show this message
 ```
 
+## test chef_solo with 'git' recipe
+
+modify Vagrantfile to add_recipe "git". and let's see what we need to do to make the recipe run.
+
+there is a recipe here https://github.com/opscode-cookbooks/git
+
+by convention create dir tree and puts snippets of code from two files recipes/default.rb and attributes/default.rb
+
+https://github.com/opscode-cookbooks/git/blob/master/recipes/default.rb
+https://github.com/opscode-cookbooks/git/blob/master/attributes/default.rb
+
+since I am on linux mint all I need is `package 'git'` in recipe location for package attributes right??? (flying blind but experimentig)
+
+now run `vagrant provision` and magic happens. 
+
+```
+[default] -- /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+[default] Running provisioner: chef_solo...
+Generating chef JSON and uploading...
+Running chef-solo...
+stdin: is not a tty
+[2013-07-31T16:27:21+00:00] INFO: *** Chef 10.14.2 ***
+[2013-07-31T16:27:21+00:00] INFO: Setting the run_list to ["recipe[git]"] from JSON
+[2013-07-31T16:27:21+00:00] INFO: Run List is [recipe[git]]
+[2013-07-31T16:27:21+00:00] INFO: Run List expands to [git]
+[2013-07-31T16:27:21+00:00] INFO: Starting Chef Run for precise32
+[2013-07-31T16:27:21+00:00] INFO: Running start handlers
+[2013-07-31T16:27:21+00:00] INFO: Start handlers complete.
+[2013-07-31T16:27:35+00:00] INFO: Chef Run complete in 13.329304 seconds
+[2013-07-31T16:27:35+00:00] INFO: Running report handlers
+[2013-07-31T16:27:35+00:00] INFO: Report handlers complete
+```
+
+
+Let's test. `vagrant ssh` to the machine and run `git` command. yiipppi. we are golden.
+
 
 
