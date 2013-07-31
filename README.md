@@ -124,5 +124,15 @@ Vagrantfile
 
 The actual image vm built from this box is in `~/VirtualBox VMs` folder `vagrant_default_xxxxnumbersxxx`. so that's typical VBox stuff vmdk
 
+## quick test with provisioning using :shell
+
+`config.vm.provision :shell, :inline => "echo 'hello empire' > hello.txt"`
+
+`vagrant reload` (hm, you will see warning "stdin: is not a tty" this is not a problem according to this https://github.com/mitchellh/vagrant/issues/1673)
+
+`vagrant ssh` and you should see hello.txt 
+
+`cat hello.txt` should produce 'hello empire' 
+
 
 
