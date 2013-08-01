@@ -290,3 +290,16 @@ let's run.
 
 I deleted attributes/default.rb and git installed just with the package 'git' command using apt-get so I am not sure what to do with attributes
 
+
+## back to fixing users
+
+
+http://stackoverflow.com/questions/9882074/how-do-i-create-user-account-by-chef-solo/9884655#9884655
+
+but first make public cookbooks into submodules
+
+git submodule add git://github.com/opscode-cookbooks/users.git cookbooks/users
+git submodule add git://github.com/edelight/chef-solo-search.git cookbooks/chef-solo-search
+
+Found an example here https://github.com/niku/vagrant_config_files/tree/minimum_set
+
