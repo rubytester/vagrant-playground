@@ -303,3 +303,17 @@ git submodule add git://github.com/edelight/chef-solo-search.git cookbooks/chef-
 
 Found an example here https://github.com/niku/vagrant_config_files/tree/minimum_set
 
+## success run
+
+- data_bags path needs to be specified in Vagrantfile. (contrast that with cookbooks as a sensible default).
+- recipe is 'sysadmins' but group name is 'sysadmin' singular
+
+debug shows
+```
+Processing user[testuser] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/users/providers/manage.rb line 85)
+Executing useradd -p '$1$sSlgTsb2$uk.Y5pPU9EwTVYeGrRVKd.' -m -d '/home/testuser' testuser
+```
+
+so in conclusion for chef_solo vagrant you need the search and make sure the group is singular 'sysadmin'. (there has to be another recipe just to create users and not new groups)
+
+
