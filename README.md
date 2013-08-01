@@ -279,3 +279,9 @@ and add Vagrantfile entry for users::sysadmins
 and i just discovered `chef.log_level = :debug` option so I can see what's going on with provisioning.
 
 let's run.
+
+## first run
+
+- testuser was not created. apparently I need https://github.com/edelight/chef-solo-search
+- sysadmins group was created succesfully
+- and I just discovered git installed but with older version using apt-get and not using any provided attributes. why?
