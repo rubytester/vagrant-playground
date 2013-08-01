@@ -285,3 +285,8 @@ let's run.
 - testuser was not created. apparently I need https://github.com/edelight/chef-solo-search
 - sysadmins group was created succesfully
 - and I just discovered git installed but with older version using apt-get and not using any provided attributes. why?
+
+## fix git recipe
+
+I deleted attributes/default.rb and git installed just with the package 'git' command using apt-get so I am not sure what to do with attributes
+
