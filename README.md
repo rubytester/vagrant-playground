@@ -252,6 +252,30 @@ I bet I want to add .vagrant folder to gitignore.
 
 Vagrant automatically sets up shared folder on vm in `/vagrant` pointing to the root project dir on host. (dir where we started vagrant with Vagrantfile on host `~/vagrant-playground` in this case). nice. So this is how it has access to the cookbooks ?! hm. So host and vm has a shared folder so no need to copy stuff? need to figure this out.
 
+## provision users accounts
+
+this tutorial to learn to create user accounts on vm.
+https://gist.github.com/dergachev/3866825
+
+So to work through confusion here. I think I need cookbooks/users so I'll get the git repo. https://github.com/opscode-cookbooks/users.git
+I should probably make it a submodule of this project but for now let's stick it there.
+I will use 'users::sysadmins' recipe. I guess this will create sysadmins group.
+The next thing I expect it is to create a 'tesuser' account belonging to sysadmins group so let's have a databags/users/testeuser.json with password 'password123' like so
+
+```
+{
+ "groups": [
+    "sysadmins"
+  ],
+  "id": "testuser",
+  "password": "$1$sSlgTsb2$uk.Y5pPU9EwTVYeGrRVKd."
+}
+```
+hashed password, generated via openssl passwd -1 "password123"
+(readmore http://www.openssl.org/docs/apps/passwd.html)
 
 
+and add Vagrantfile entry for users::sysadmins
+and i just discovered `chef.log_level = :debug` option so I can see what's going on with provisioning.
 
+let's run.
