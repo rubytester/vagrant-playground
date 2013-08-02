@@ -337,3 +337,10 @@ http://tumblr.nrako.com/post/22320729770/vagrant-chef-librarian
 well, get rid of cookbooks directory and ignore it.
 sudo gem install librarian-chef so we can manage cookbooks for Vagrantfile
 
+Add cookbooks to Cheffile and `librarian-chef install`. We now have Cheffile specifying the cookbooks for this project. ok then
+
+test:
+- `vagrant destroy` and `vagrant up` and i expect the new cookbooks to work and provision what they did before
+- `vagrant ssh` and `su - testuser` and provide password123 for the new user.
+  yes, the user now has 'testuser and sysadmin' group.
+

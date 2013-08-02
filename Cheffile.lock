@@ -1,0 +1,32 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    build-essential (1.4.0)
+    chef_handler (1.1.4)
+    dmg (1.1.0)
+    git (2.5.2)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (>= 1.0)
+      windows (>= 0.0.0)
+      yum (>= 0.0.0)
+    runit (1.1.6)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+    users (1.5.0)
+    windows (1.10.0)
+      chef_handler (>= 0.0.0)
+    yum (2.3.0)
+
+GIT
+  remote: https://github.com/edelight/chef-solo-search
+  ref: master
+  sha: a28e7f25ab4afb53f9a55dd49d8b1277d0374c29
+  specs:
+    chef-solo-search (0.4.0)
+
+DEPENDENCIES
+  chef-solo-search (>= 0)
+  git (>= 0)
+  users (>= 0)
+
