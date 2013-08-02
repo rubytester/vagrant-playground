@@ -344,3 +344,8 @@ test:
 - `vagrant ssh` and `su - testuser` and provide password123 for the new user.
   yes, the user now has 'testuser and sysadmin' group.
 
+## cookbook 'apt'
+
+can't use the latest. 1.10.0 is the one to use for this vagrant 1.2.7
+see this https://github.com/opscode-cookbooks/apt/pull/53
+
