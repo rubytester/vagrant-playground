@@ -317,3 +317,18 @@ Executing useradd -p '$1$sSlgTsb2$uk.Y5pPU9EwTVYeGrRVKd.' -m -d '/home/testuser'
 so in conclusion for chef_solo vagrant you need the search and make sure the group is singular 'sysadmin'. (there has to be another recipe just to create users and not new groups)
 
 
+## READING
+
+https://news.ycombinator.com/item?id=5559856
+http://taylorlapeyre.me/2013/04/better-workflow-with-vagrant/
+http://www.jetbrains.com/ruby/webhelp/configuring-remote-interpreters-via-virtual-boxes.html
+
+https://github.com/amaia/rails-starter-box
+
+http://www.youtube.com/watch?v=5KQUhMM_99Y
+short 4 min video on on how to Config RubyMine for remote ruby.
+
+https://github.com/pivotal-sprout/sprout
+
+http://tumblr.nrako.com/post/22320729770/vagrant-chef-librarian
+
