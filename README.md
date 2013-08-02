@@ -332,3 +332,8 @@ https://github.com/pivotal-sprout/sprout
 
 http://tumblr.nrako.com/post/22320729770/vagrant-chef-librarian
 
+## librarian-chef
+
+well, get rid of cookbooks directory and ignore it.
+sudo gem install librarian-chef so we can manage cookbooks for Vagrantfile
+
